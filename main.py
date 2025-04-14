@@ -1,6 +1,7 @@
 from json import loads
 from crawl import crawl
 from links_file import filter_out_existing_links
+from notify import notify
 
 
 with open("config.json", "r") as file:
@@ -15,4 +16,5 @@ for page in data:
                 endswith=match["endswith"]
             )]
         )
-        print(new_links)
+        for link in new_links:
+            notify(match.get("message") or page["message"], link)
