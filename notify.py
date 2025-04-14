@@ -4,9 +4,9 @@ from os import getenv
 
 
 load_dotenv()
-def notify(message, url):  # TODO
+def notify(message, url, detail):  # TODO
     DiscordWebhook(
         url=getenv("DISCORD_WEBHOOK"),
         rate_limit_retry=True,
-        content=f"{message}\n{url}",
+        content=f"{message}\n[{detail}]({url})",
     ).execute()

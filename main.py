@@ -16,5 +16,5 @@ for page in data:
                 endswith=match["endswith"]
             )]
         )
-        for link in new_links:
-            notify(match.get("message") or page["message"], link)
+        for link, detail in new_links:
+            notify(match.get("message") or page["message"], link, detail)

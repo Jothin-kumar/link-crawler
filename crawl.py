@@ -8,4 +8,4 @@ def crawl(url, startswith='', endswith=''):
     for link in soup.find_all('a'):
         href = link.get('href')
         if href.startswith(startswith) and href.endswith(endswith):
-            yield href
+            yield href, link.text
