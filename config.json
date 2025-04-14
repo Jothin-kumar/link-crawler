@@ -1,0 +1,11 @@
+[
+    {
+        "url": "https://jeemain.nta.nic.in/",
+        "matches": [
+            {
+                "startswith": "https://cdnbbsr.s3waas.gov.in",
+                "endswith": ".pdf"
+            }
+        ]
+    }
+]
