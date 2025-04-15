@@ -6,10 +6,10 @@ from time import sleep
 from datetime import datetime
 
 
-with open("config.json", "r") as file:
-    data = loads(file.read())
-
 def __main__():
+    with open("config.json", "r") as file:
+        data = loads(file.read())
+
     for page in data:
         for match in page["matches"]:
             new_links = filter_out_existing_links(
